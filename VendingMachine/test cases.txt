@@ -1,0 +1,14 @@
+1 Buyer selects a food that is available, with exact amount as the price;
+    user gets the snack,then the program repeats as expected. test passed.
+
+2 Buyer selects a food that is in stock, with less money than the price;
+    user gets a message that says "Not enough funds! Enter more coins." then the program repeats as expected. test passed.
+
+3 Buyer selects a food that is in stock, with more money than the price;
+    users gets the snack, and sees their change displayed in quarter, dimes and nickels, then the program repeats as expected. test passed.
+
+4 Buyer selects a food that is sold out;
+    user sees "Sold out. Please make another choice" message and then the program repeats as expected. test passed.
+
+5 Buyer selects a food that does not exist.
+    user sees "You must select from given the options!" message and then the program repeats as expected. test passed
