@@ -12,18 +12,18 @@ public class TicTacToe {
 	*/ 
     public static void main(String[] args) {
         char[][] board = new char[3][3];
-        displayBoard(board);
+        TicTacToe(board);
 
         while (true) {
             // Prompt the first player
-            makeAMove(board, 'X');
+            play(board, 'X');
 
             //check if the winner is player X
-            displayBoard(board);
-            if (isWon('X', board)) {
-                System.out.println("X player won");
+            TicTacToe(board);
+            if (won('X', board)) {
+                System.out.println("Player X Wins!!!");
                 System.exit(1);
-            } else if (isDraw(board)) {
+            } else if (stalemate(board)) {
                 System.out.println("Stalemate");
                 System.exit(2);
             }
@@ -31,35 +31,57 @@ public class TicTacToe {
 	        * Switches the current player from X to O, or O to X.
 	        */
             // Prompt the second player
-            makeAMove(board, 'O');
-            displayBoard(board);
+            play(board, 'O');
+            TicTacToe(board);
             //check if the winner is player O
-            if (isWon('O', board)) {
-                System.out.println("O player won");
+            if (won('O', board)) {
+                System.out.println("Player O Wins!!!");
                 System.exit(3);
-            } else if (isDraw(board)) {
+            } else if (stalemate(board)) {
                 System.out.println("Stalemate");
                 System.exit(4);
             }
         }
     }
 
-    public static void makeAMove(char[][] board, char player) {
-        boolean done = false;
+       /* 
+	 * Instantiate board to be a 3 by 3 char array of spaces.
+	 * Set player to be 'X'.
+	 */
+    static void TicTacToe (char[][] board) {
+        System.out.println("\n-------------");
+        for (int i = 0; i < 3; i++) {
+            System.out.print("| ");
+            for (int j = 0; j < 3; j++)
+                System.out.print(board[i][j] != '\u0000' ? board[i][j] + " | " : "  | ");
+            System.out.println("\n-------------");
+        }
+    }
 
+    /* 
+	 * If s represents a valid move, add the current player's symbol to the board and return true.
+	 * Otherwise return false.
+	 */
+
+    public static void play(char[][] board, char player) {
+        boolean done = false;
+        //if the cell isn't taken then set done = true
         do {
             System.out.print("Enter a row for player " + player + ": ");
+            //user input value - 1, for index start with0
             int row = input.nextInt() - 1;
-            if(row > 2){
+            if(row > 2 || row < 0){
                 System.out.println("out of range");
                 continue;
             }
             System.out.print("Enter a column for player " + player + ": ");
+             //user input value - 1, for index start with0
             int column = input.nextInt() - 1;
-            if(column > 2){
+            if(column > 2 || column < 0){
                 System.out.println("out of range");
                 continue;
             }
+            //check if the cell is taken
             if (board[row][column] == '\u0000') { // an empty cell
                 board[row][column] = player;
                 done = true;
@@ -68,26 +90,13 @@ public class TicTacToe {
         } while (!done);
     }
 
-    /* 
-	 * Instantiate board to be a 3 by 3 char array of spaces.
-	 * Set player to be 'X'.
-	 */
-    static void displayBoard(char[][] board) {
-        System.out.println("\n-------------");
-
-        for (int i = 0; i < 3; i++) {
-            System.out.print("| ");
-            for (int j = 0; j < 3; j++)
-                System.out.print(board[i][j] != '\u0000' ? board[i][j] + " | " : "  | ");
-            System.out.println("\n-------------");
-        }
-    }
+ 
     /*
 	 * Returns true if the current player has won the game.
 	 * Three in a row, column or either diagonal.
 	 * Otherwise, return false.
 	 */
-    public static boolean isWon(char ch, char[][] board) {
+    public static boolean won(char ch, char[][] board) {
         // Check rows
         for (int i = 0; i < 3; i++)
             if (ch == board[i][0] && ch == board[i][1] && ch == board[i][2])
@@ -109,7 +118,7 @@ public class TicTacToe {
         return false;
     }
 
-    public static boolean isDraw(char[][] board) {
+    public static boolean stalemate(char[][] board) {
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++)
                 if (board[i][j] == '\u0000')

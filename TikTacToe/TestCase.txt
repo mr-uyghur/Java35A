@@ -1,0 +1,73 @@
+1. A player makes a legal movement;
+
+Player is able to proceed with the game.
+
+Inputs and Output:
+
+Enter a row for player X: 1
+Enter a column for player X: 1
+
+-------------
+| X |   |   |
+-------------
+|   |   |   |
+-------------
+|   |   |   |
+-------------
+
+2. A player makes an illegal movement;
+
+if the input is out of range the player is unable to proceed and gets a warning message "out of range"
+
+Inputs and Output:
+Enter a row for player O: 1
+Enter a column for player O: 4
+out of range
+
+if the cell is already taken the player is unable to proceed and gets a warning message "This cell is already occupied. Try a different cell"
+
+Inputs and Output:
+Enter a row for player X: 1
+Enter a column for player X: 2
+This cell is already occupied. Try a different cell
+
+3. Player X wins
+
+Player X recieves winner message " Player X Wins!!!" then program ends
+
+Output
+-------------
+| X | O |   |
+-------------
+| X | O |   |
+-------------
+| X |   |   |
+-------------
+Player X Wins!!!
+
+4. Player X loses
+Player O recieves winner message " Player O Wins!!!" then program ends
+
+Output:
+-------------
+| X | X |   |
+-------------
+| O | O | O |
+-------------
+| X |   |   |
+-------------
+O player Wins!!!
+
+5. Stalemate (neither player wins)
+
+Players reacieve "Stalemate" message then the program ends
+
+Output:
+-------------
+| X | X | O |
+-------------
+| O | X | X |
+-------------
+| X | O | O |
+-------------
+Stalemate
