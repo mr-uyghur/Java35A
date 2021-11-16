@@ -1,0 +1,12 @@
+  Ali Halmamat CIS35A Spring 2021  Lab 4
+m1 = 8 dollar(s) 75 cents(s)
+m2 = 5 dollar(s) 80 cents(s)
+m3 = 0 dollar(s) 0 cents(s)
+m1 equals m2? false
+m1 equals m3? false
+m4 = m1 + m2 = 14 dollar(s) 55 cents(s)
+m5 = m4 * 3 = 43 dollar(s) 65 cents(s)
+m1 + m2 + m3 + m4 = 29 dollar(s) 10 cents(s)
+m4 - m2 = 9 dollar(s) -25 cents(s)
+m6 = (10 dollar(s) 50 cents(s), 20 dollar(s) 50 cents(s), 30 dollar(s) 50 cents(s), 40 dollar(s) 50 cents(s))
+m7 = m6 * 2 = (21 dollar(s) 0 cents(s), 41 dollar(s) 0 cents(s), 61 dollar(s) 0 cents(s), 81 dollar(s) 0 cents(s))
