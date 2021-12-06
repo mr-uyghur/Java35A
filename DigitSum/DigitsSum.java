@@ -1,3 +1,5 @@
+package DigitSum;
+
 //import scanner
 import java.util.Scanner;
 //Java class

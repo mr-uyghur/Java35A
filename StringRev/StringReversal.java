@@ -1,3 +1,5 @@
+package StringRev;
+
 import java.util.*;
 
 public class StringReversal

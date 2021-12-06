@@ -1,3 +1,5 @@
+package TikTacToe;
+
 // import scanner
 import java.util.Scanner;
 
