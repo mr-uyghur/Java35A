@@ -1,0 +1,10 @@
+Name            Class           Hours   Sales   Rate    Weekely Pay
+===================================================================
+Ali H   Salaried                                1155.0*
+Jennifer Waltz  Hourly          40.00           $25.00  $1,000.00
+Moly Smit       Hourly          40.00           $20.00  $800.00
+Joan Han        Hourly          45.00           $10.00  $500.00
+Marry Butler    commissioned            $10,000.00      2000.00
+===================================================================
+Total: $5455.00
+*A 10% bonus is awarded
